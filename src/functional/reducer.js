@@ -1,7 +1,9 @@
+import * as actions from "./actionTypes";
+
 let lastId = 0;
 
-export default function reducer(state = [], action) {
-  if (action.type == "StartQuiz")
+function reducer(state = [], action) {
+  if (action.type === actions.BEGIN_QUIZ)
     return [
       {
         id: ++lastId,
@@ -9,8 +11,10 @@ export default function reducer(state = [], action) {
         resolved: false,
       },
     ];
-  else if (action.type == "NextQuestion")
+  else if (action.type === actions.NEXT_QUESTION)
     return state.filter((nextQtn) => nextQtn.id !== action.payload.id);
 
   return state;
 }
+
+export default reducer;
