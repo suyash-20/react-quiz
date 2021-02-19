@@ -108,6 +108,4 @@ const App: React.FC = () => {
   );
 };
 
-//--------------------------------------42:00 ONWARDS line 23 onwards of App.ts
-
 export default App;
